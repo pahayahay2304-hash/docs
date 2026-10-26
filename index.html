@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Juvelyn G. Pahayahay's IT406A academic e-portfolio, reflections, letters, certificates, and badges.">
+    <title>Welcome to
+My Portfolio | Pahayahay - IT406A</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #18291f;
+            --muted: #52665a;
+            --green: #176342;
+            --green-dark: #104b32;
+            --mint: #e8f3ed;
+            --paper: rgba(255, 255, 255, .88);
+            --line: rgba(32, 91, 62, .18);
+            --shadow: 0 12px 34px rgba(29, 70, 49, .10);
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            min-width: 320px;
+            margin: 0;
+            color: var(--ink);
+            background:
+                radial-gradient(ellipse at 5% 4%, rgba(93, 183, 137, .22), transparent 24rem),
+                radial-gradient(ellipse at 94% 26%, rgba(123, 199, 159, .18), transparent 27rem),
+                linear-gradient(145deg, #f2f8f4, #e5f2ea 55%, #f7faf7);
+            font-family: "Segoe UI", Arial, sans-serif;
+            line-height: 1.65;
+        }
+        a { color: var(--green-dark); }
+        a:focus-visible { outline: 3px solid #c07736; outline-offset: 4px; }
+        .site-shell { width: min(1180px, calc(100% - 36px)); margin: 24px auto; }
+        .site-header, main, .site-footer {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .35);
+        }
+        .site-header {
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 17px clamp(20px, 4vw, 48px);
+            border-radius: 0;
+            background: #171b19;
+            box-shadow: 0 6px 22px rgba(0, 0, 0, .16);
+        }
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            font-size: .96rem;
+            font-weight: 700;
+            letter-spacing: .035em;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .brand-mark {
+            display: grid;
+            width: 64px;
+            height: 64px;
+            flex: 0 0 64px;
+            place-items: center;
+            border: 1px solid rgba(255, 255, 255, .42);
+            border-radius: 50%;
+            overflow: hidden;
+            background: #fff;
+            color: var(--green-dark);
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+        }
+        .brand-mark img { display: block; width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; }
+        nav a {
+            padding: 9px 12px;
+            border-radius: 999px;
+            color: #f4f7f5;
+            font-size: .92rem;
+            text-decoration: none;
+            transition: background .15s ease, color .15s ease;
+        }
+        nav a:hover, nav a[aria-current="page"] { background: rgba(255, 255, 255, .14); color: #fff; }
+        nav a[aria-current="page"] { font-weight: 700; }
+        .nav-form { display: inline-flex; margin: 0; }
+        .nav-button {
+            padding: 9px 12px;
+            border: 0;
+            border-radius: 999px;
+            background: transparent;
+            color: #f4f7f5;
+            font: inherit;
+            font-size: .92rem;
+            cursor: pointer;
+        }
+        .nav-button:hover { background: rgba(255, 255, 255, .14); color: #fff; }
+        main {
+            min-height: 500px;
+            padding: clamp(26px, 5vw, 66px);
+            border-top: 0;
+            border-bottom: 0;
+            border-color: rgba(255, 255, 255, .88);
+            background:
+                radial-gradient(ellipse at 1% 95%, rgba(82, 170, 123, .20), transparent 23rem),
+                radial-gradient(ellipse at 98% 3%, rgba(96, 183, 137, .17), transparent 25rem),
+                rgba(255, 255, 255, .78);
+        }
+        main.has-background {
+            background-image:
+                linear-gradient(rgba(248, 252, 249, .32), rgba(248, 252, 249, .40)),
+                var(--page-background);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .hero { max-width: 900px; margin: 18px auto 58px; text-align: center; }
+        .eyebrow {
+            margin: 0 0 12px;
+            color: var(--green);
+            font-size: .78rem;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+        h1, h2, h3, p { margin-top: 0; }
+        h1 {
+            margin-bottom: 16px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-style: italic;
+            line-height: 1.1;
+        }
+        .hero-title { white-space: pre-line; }
+        .hero-subtitle { margin: 0; color: var(--muted); font-size: clamp(1rem, 2vw, 1.2rem); }
+        .page-heading { margin-bottom: 32px; text-align: center; }
+        .page-heading h1 { font-family: "Segoe UI", Arial, sans-serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-style: normal; }
+        .page-heading p { max-width: 720px; margin: 0 auto; color: var(--muted); font-size: 1.08rem; }
+        .profile-panel {
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(190px, .8fr);
+            align-items: center;
+            gap: clamp(24px, 5vw, 60px);
+            max-width: 980px;
+            margin: 0 auto;
+            padding: clamp(22px, 4vw, 42px);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, .78);
+            box-shadow: var(--shadow);
+        }
+        .profile-copy h2 { margin-bottom: 14px; font-family: Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.25rem); font-style: italic; line-height: 1.25; }
+        .profile-copy p { margin-bottom: 12px; color: #34483b; }
+        .profile-image, .profile-placeholder {
+            display: block;
+            width: min(100%, 300px);
+            aspect-ratio: 4 / 5;
+            justify-self: center;
+            border-radius: 14px;
+            object-fit: cover;
+        }
+        .profile-visual { display: flex; flex-direction: column; align-items: center; }
+        .profile-placeholder {
+            display: grid;
+            place-items: center;
+            background: linear-gradient(145deg, #d9efe2, #f8fbf8 54%, #b9dfc9);
+            color: var(--green);
+            font-family: Georgia, serif;
+            font-size: 5rem;
+        }
+        .profile-photo-editor, .inline-editor, .background-editor {
+            margin-top: 18px;
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: rgba(237, 247, 240, .88);
+        }
+        .profile-photo-editor label, .inline-editor label, .background-editor label { display: block; margin-bottom: 8px; font-weight: 700; }
+        .profile-photo-editor input, .inline-editor input[type="file"], .background-editor input[type="file"] { display: block; width: 100%; margin-bottom: 12px; font: inherit; }
+        .profile-photo-editor button, .inline-editor button, .background-editor button {
+            min-height: 42px;
+            padding: 9px 15px;
+            border: 0;
+            border-radius: 8px;
+            background: var(--green);
+            color: white;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .editor-hint { margin: 8px 0 0; color: var(--muted); font-size: .9rem; }
+        .inline-editor summary { color: var(--green-dark); font-weight: 700; cursor: pointer; }
+        .inline-editor textarea, .inline-editor input[type="text"] {
+            display: block;
+            width: 100%;
+            margin: 0 0 12px;
+            padding: 10px 12px;
+            border: 1px solid #a9bcaf;
+            border-radius: 8px;
+            background: #fff;
+            color: var(--ink);
+            font: inherit;
+        }
+        .inline-editor textarea { min-height: 78px; resize: vertical; }
+        .inline-editor textarea:focus-visible, .inline-editor input:focus-visible { outline: 3px solid #c07736; outline-offset: 2px; }
+        .status-notice { margin: 0 0 24px; padding: 13px 16px; border-radius: 10px; background: #e8f5eb; color: #18572e; }
+        .school-logo-editor {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding: 16px 20px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: rgba(237, 247, 240, .92);
+        }
+        .school-logo-preview {
+            display: grid;
+            width: 76px;
+            height: 76px;
+            place-items: center;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: white;
+            color: var(--green);
+            font-size: .82rem;
+            text-align: center;
+        }
+        .school-logo-preview img { display: block; width: 100%; height: 100%; object-fit: contain; }
+        .school-logo-editor h2 { margin-bottom: 3px; font-size: 1.05rem; }
+        .school-logo-editor p { margin: 0 0 8px; color: var(--muted); font-size: .9rem; }
+        .school-logo-editor form { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+        .school-logo-editor input { min-width: 0; max-width: 100%; font: inherit; }
+        .school-logo-editor button {
+            min-height: 40px;
+            padding: 8px 14px;
+            border: 0;
+            border-radius: 8px;
+            background: var(--green);
+            color: #fff;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .background-editor { margin: 0 0 24px; }
+        .background-editor h2 { margin-bottom: 5px; font-size: 1.1rem; }
+        .background-editor p { margin-bottom: 10px; color: var(--muted); }
+        .background-preview {
+            min-height: 90px;
+            margin: -18px -18px 16px;
+            border-radius: 11px 11px 0 0;
+            background: linear-gradient(135deg, #d8eee0, #f8fbf8);
+            background-position: center;
+            background-size: cover;
+        }
+        .section-title { margin: 54px 0 20px; font-family: Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.1rem); }
+        .card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+        .card {
+            display: flex;
+            min-height: 190px;
+            flex-direction: column;
+            padding: 22px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .9);
+            box-shadow: 0 5px 18px rgba(29, 70, 49, .06);
+        }
+        .card h2, .card h3 { margin-bottom: 8px; font-size: 1.1rem; line-height: 1.35; }
+        .card p { margin-bottom: 16px; color: var(--muted); }
+        .card-link { margin-top: auto; font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+        .file-card { min-height: 225px; }
+        .file-preview {
+            display: grid;
+            min-height: 160px;
+            margin: -22px -22px 16px;
+            place-items: center;
+            overflow: hidden;
+            border-bottom: 1px solid var(--line);
+            background: linear-gradient(145deg, #f0f7f2, #deeee4);
+            color: var(--green);
+            font-size: 2.5rem;
+        }
+        .file-preview img { width: 100%; height: 200px; object-fit: contain; background: white; }
+        .file-preview iframe { display: block; width: 100%; height: 360px; border: 0; background: white; }
+        .document-type-preview { display: grid; min-height: 160px; width: 100%; place-content: center; gap: 4px; background: #f4f8f5; color: var(--green-dark); text-align: center; }
+        .document-type-preview strong { font-size: 2.4rem; line-height: 1.2; }
+        .document-type-preview span { font-size: .9rem; }
+        .document-title-editor { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+        .document-title-editor label { display: block; margin-bottom: 5px; color: var(--muted); font-size: .85rem; font-weight: 700; }
+        .document-title-editor input {
+            display: block;
+            width: 100%;
+            min-height: 40px;
+            margin-bottom: 8px;
+            padding: 8px 10px;
+            border: 1px solid #a9bcaf;
+            border-radius: 7px;
+            font: inherit;
+        }
+        .document-title-editor button {
+            min-height: 38px;
+            padding: 7px 12px;
+            border: 0;
+            border-radius: 7px;
+            background: var(--green);
+            color: #fff;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .document-delete { margin-top: 10px; }
+        .document-delete summary { color: #842e1d; font-weight: 700; cursor: pointer; }
+        .document-delete p { margin: 8px 0; font-size: .9rem; }
+        .document-delete button {
+            min-height: 38px;
+            padding: 7px 12px;
+            border: 0;
+            border-radius: 7px;
+            background: #842e1d;
+            color: #fff;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .document-delete button:hover { background: #672315; }
+        .empty-state {
+            grid-column: 1 / -1;
+            padding: 30px;
+            border: 1px dashed rgba(23, 99, 66, .35);
+            border-radius: 14px;
+            color: var(--muted);
+            text-align: center;
+        }
+        .empty-state strong { display: block; margin-bottom: 5px; color: var(--ink); }
+        .site-footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px 24px;
+            padding: 22px clamp(20px, 4vw, 48px);
+            border-top: 1px dashed var(--line);
+            border-radius: 0;
+            background: var(--paper);
+            color: var(--muted);
+            font-size: .9rem;
+        }
+        .site-footer p { margin: 0; }
+        @media (max-width: 760px) {
+            .site-shell { width: min(100% - 20px, 620px); margin: 10px auto; }
+            .site-header { align-items: flex-start; flex-direction: column; gap: 12px; padding: 16px; }
+            nav { justify-content: flex-start; gap: 3px; }
+            nav a { padding: 8px 10px; font-size: .86rem; }
+            main { min-height: 0; padding: 28px 18px 38px; }
+            .hero { margin: 14px auto 38px; }
+            .profile-panel { grid-template-columns: 1fr; }
+            .profile-image, .profile-placeholder { width: min(70%, 250px); }
+            .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 480px) {
+            .card-grid { grid-template-columns: 1fr; }
+            .site-footer { flex-direction: column; }
+            .school-logo-editor { grid-template-columns: 1fr; }
+            .school-logo-preview { width: 64px; height: 64px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="site-shell">
+        <header class="site-header">
+            <a class="brand" href="index.html">
+                <span class="brand-mark">
+                                            <img src="profile.jpg" alt="Profile photo of Juvelyn Pahayahay">
+                                    </span>
+                <span>PAHAYAHAY, JUVELYN G. <span aria-hidden="true">·</span> IT406A</span>
+            </a>
+            <nav aria-label="Main navigation">
+                                    <a href="index.html" aria-current="page">Home</a>
+                                    <a href="about.html">About Me</a>
+                                    <a href="reflections.html">Reflections and Letters</a>
+                                    <a href="certificates.html">Certificates and Badges</a>
+                            </nav>
+        </header>
+
+        <main class="has-background" style="--page-background: url('uploads/backgrounds/home-background.png')">
+                                                                    <section class="hero">
+                    <p class="eyebrow">
+                                                    <img src="school-logo.png" alt="" width="30" height="30" style="vertical-align: middle; object-fit: contain;">
+                                                IT406A · Professional Seminars in IT
+                    </p>
+                    <h1 class="hero-title">Welcome to
+My Portfolio</h1>
+                    <p class="hero-subtitle">A collection of my learning, reflections, and achievements.</p>
+                </section>
+                <section class="profile-panel" aria-labelledby="home-intro">
+                    <div class="profile-copy">
+                        <h2 id="home-intro">Hi, I&#039;m Juvelyn Gimpayan Pahayahay</h2>
+                        <p>A fourth-year BSIT student from J.H. Cerilles State College main campus.</p>
+                        <p>I am passionate about technology, problem-solving, and continuous learning. This e-portfolio showcases my academic projects, assignments, and reflections as I journey toward becoming a competent and ethical IT professional.</p>
+                    </div>
+                    <div class="profile-visual">
+                                                    <img class="profile-image" src="profile.jpg" alt="Portrait of Juvelyn Pahayahay">
+                                                                    </div>
+                </section>
+                    </main>
+
+        <footer class="site-footer">
+            <p>© 2026 Juvelyn G. Pahayahay · IT406A - Professional Seminars in IT</p>
+        </footer>
+    </div>
+</body>
+</html>
